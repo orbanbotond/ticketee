@@ -32,5 +32,23 @@ It should be
 Under the let for user inside spec/controllers/projects_controller_spec.rb, add one for project:
 
 -------------------------------------------------
+page 217
+ch 7.4.1
+
+missing route causes the spec to fail:
+Failures:
+
+  1) Admin::UsersController standard users are not able to access the index action
+     Failure/Error: get 'index'
+     ActionController::RoutingError:
+       No route matches {:controller=>"admin/users"}
+     # ./spec/controllers/admin/users_controller_spec.rb:8:in `block (3 levels) in <top (required)>'
+
+This is the missing route:
+  namespace :admin do
+    resources :users
+  end
+
+-------------------------------------------------
 
 -----
