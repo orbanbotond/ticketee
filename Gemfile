@@ -6,6 +6,8 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'sqlite3'
+gem 'pg'
+gem 'pry'
 
 
 # Gems used only for assets and not required
@@ -21,6 +23,25 @@ group :assets do
 end
 
 gem 'jquery-rails'
+
+group :test, :development do
+  gem 'rspec-rails', '~> 2.11'
+  gem "rb-fsevent"
+
+  gem 'guard'
+  gem 'guard-bundler'
+  gem 'guard-livereload'
+  # gem 'guard-spork'
+  gem 'guard-rspec'
+  gem 'annotate', ">=2.5.0"
+  gem 'guard-annotate'
+
+  gem 'sqlite3', :require => 'sqlite3'
+end
+
+group :test do
+  gem 'capybara', '1.1.2'
+end
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'

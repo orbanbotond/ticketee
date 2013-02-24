@@ -4,9 +4,19 @@
   <title>Ticketee</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <% if Rails.env == 'development' %>
+    <%= javascript_include_tag asset_path('livereload.js?snipver=1') %>
+  <% end %>
+
   <%= csrf_meta_tags %>
 </head>
 <body>
+
+<% flash.each do |key, value| %>
+  <div class='flash' id='<%= key %>'>
+    <%= value %>
+  </div>
+<% end %>
 
 <%= yield %>
 
