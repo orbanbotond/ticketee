@@ -49,6 +49,7 @@ This is the missing route:
     resources :users
   end
 
+That route is added later ch 7.5.1 page 223.
 -------------------------------------------------
 
 -----
