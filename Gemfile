@@ -9,6 +9,7 @@ gem 'sqlite3'
 gem 'pg'
 gem 'pry'
 
+gem 'dynamic_form', '1.1.4'
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -41,6 +42,7 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'factory_girl', '2.6.4'
 end
 
 # To use ActiveModel has_secure_password

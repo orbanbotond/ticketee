@@ -50,6 +50,7 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     diff-lcs (1.2.1)
+    dynamic_form (1.1.4)
     em-websocket (0.4.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
@@ -57,6 +58,8 @@ GEM
     eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (2.6.4)
+      activesupport (>= 2.3.9)
     ffi (1.4.0)
     guard (1.6.2)
       listen (>= 0.6.0)
@@ -181,6 +184,8 @@ DEPENDENCIES
   annotate (>= 2.5.0)
   capybara (= 1.1.2)
   coffee-rails (~> 3.2.1)
+  dynamic_form (= 1.1.4)
+  factory_girl (= 2.6.4)
   guard
   guard-annotate
   guard-bundler
