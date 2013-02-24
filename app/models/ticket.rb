@@ -8,6 +8,7 @@
 #  project_id  :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
+#  user_id     :integer
 #
 
 class Ticket < ActiveRecord::Base
@@ -16,4 +17,7 @@ class Ticket < ActiveRecord::Base
   validates :title, :presence => true
   validates :description, :presence => true,
                         :length => { :minimum => 10 }
+
+  attr_accessible :description, :title
+  belongs_to :user
 end

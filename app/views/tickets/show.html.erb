@@ -1,4 +1,5 @@
 <div id='ticket'>
+  <span id='author'>Created by <%= @ticket.user.email %></span>
   <h2><%= @ticket.title %></h2>
   <%= link_to "Edit Ticket", [:edit, @project, @ticket] %>
   <%= link_to "Delete Ticket", [@project, @ticket], :method => :delete,
