@@ -60,6 +60,9 @@ GEM
     em-websocket (0.4.0)
       eventmachine (>= 0.12.9)
       http_parser.rb (~> 0.5.3)
+    email_spec (1.2.1)
+      mail (~> 2.2)
+      rspec (~> 2.0)
     erubis (2.7.0)
     eventmachine (1.0.0)
     execjs (1.4.0)
@@ -195,6 +198,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   dynamic_form (= 1.1.4)
+  email_spec (= 1.2.1)
   factory_girl (= 2.6.4)
   guard
   guard-annotate

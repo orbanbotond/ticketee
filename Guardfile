@@ -29,7 +29,7 @@ guard 'livereload' do
 end
 
 guard 'rspec', :cli => "--color --format nested --fail-fast" do
-  watch(%r{^spec/.+_spec\.rb$})
+  watch(%r{^spec/.+_spec\.rb$}) {|m| m}
   watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
   watch('spec/spec_helper.rb')  { "spec" }
 
