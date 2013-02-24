@@ -19,6 +19,7 @@
 #  confirmed_at           :datetime
 #  confirmation_sent_at   :datetime
 #  unconfirmed_email      :string(255)
+#  admin                  :boolean          default(FALSE)
 #
 
 class User < ActiveRecord::Base

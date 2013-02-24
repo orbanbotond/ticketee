@@ -22,3 +22,15 @@ You can add the "Delete Ticket" link to the app/views/tickets/show.html.erb file
 however it should be
 You can add the "Delete Ticket" link to the app/views/tickets/show.html.erb file just under the "Edit Ticket" link
 
+-------------------------------------------------
+
+page 206
+ch 7.2
+
+Under the let for user inside spec/controllers/projects_controller.rb, add one for project:
+It should be 
+Under the let for user inside spec/controllers/projects_controller_spec.rb, add one for project:
+
+-------------------------------------------------
+
+-----
