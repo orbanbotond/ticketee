@@ -51,5 +51,22 @@ This is the missing route:
 
 That route is added later ch 7.5.1 page 223.
 -------------------------------------------------
+ch 7.5.5
+page  230
+
+The line
+"attr_accessible :email, :password, :admin, :as => :admin" causes
+
+1) Creating Users Creating a new user
+     Failure/Error: click_button "Create User"
+     ActiveModel::MassAssignmentSecurity::Error:
+       Can't mass-assign protected attributes: admin
+
+So instead of this:
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  attr_accessible :email, :password, :admin, :as => :admin
+
+  it should be 
+    attr_accessible :email, :password, :password_confirmation, :remember_me, :admin
 
 -----
