@@ -84,3 +84,17 @@ page 264
 let!(:project_2) { Factory(:project, :name => "Internet Explorer")
 let!(:project_2) { Factory(:project, :name => "Internet Explorer") }
 
+--------
+page 285
+
+If you didn’t do this, you would get a confusing error in your test:
+"NoMethodError:
+  undefined method 'stringify_keys' for nil:NilClass"
+Instead I get this:
+Failure/Error: put :update, { :project_id => project.id,
+     ActionController::RoutingError:
+       No route matches {:project_id=>"572", :ticket=>{}, :controller=>"tickets", :action=>"update"}
+----
+page 286
+before_filter :authorize_update!, :only => [:edit, :update]]]>
+before_filter :authorize_update!, :only => [:edit, :update]
