@@ -21,5 +21,22 @@ feature 'Deleting tickets' do
     page.should have_content("Ticket has been deleted.")
     page.current_url.should == project_url(project)
   end
-
+  scenario "New ticket link is shown to a user with permission" do
+    define_permission!(user, "view", project)
+    define_permission!(user, "create tickets", project)
+    visit project_path(project)
+    assert_link_for "New Ticket"
+  end
+  scenario "New ticket link is hidden from a user without permission" do
+    define_permission!(user, "view", project)
+    visit project_path(project)
+    assert_no_link_for "New Ticket"
+  end
+  describe "admin"do
+    let!(:user) { Factory(:admin_user)}
+    scenario "New ticket link is shown to admins" do
+      visit project_path(project)
+      assert_link_for "New Ticket"
+    end
+  end
 end

@@ -1,4 +1,8 @@
 module ApplicationHelper
+  def authorized?(permission, thing, &block)
+    block.call if can?(permission.to_sym, thing) ||
+                        current_user.try(:admin?)
+  end
   def admins_only(&block)
     concat(block.call) if current_user.try(:admin?)
   end
