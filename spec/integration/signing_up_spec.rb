@@ -9,5 +9,7 @@ feature 'Signing up' do
     click_button "Sign up"
     message = "Please open the link to activate your account."
     page.should have_content(message)
+    page.should have_content("Please confirm your account " +
+                         "before signing in.")
   end
 end
