@@ -78,4 +78,9 @@ page 262
 Add this line again underneath where you create the TextMate 2 project, this time in features/viewing_tickets.feature
 Add this line again underneath where you create the TextMate 2 project, this time in integration/viewing_tickets_spec.rb
 -------
+chapter 8.3.3
+page 264
+
+let!(:project_2) { Factory(:project, :name => "Internet Explorer")
+let!(:project_2) { Factory(:project, :name => "Internet Explorer") }
 
