@@ -10,7 +10,7 @@ gem 'pg'
 gem 'pry'
 
 gem 'dynamic_form', '1.1.4'
-
+gem 'cancan', '1.6.7'
 gem 'devise'
 
 # Gems used only for assets and not required
