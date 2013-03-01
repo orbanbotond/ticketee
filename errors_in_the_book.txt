@@ -51,5 +51,31 @@ This is the missing route:
 
 That route is added later ch 7.5.1 page 223.
 -------------------------------------------------
+page 248
 
+instead of
+belongs_to :user, :polymorphic => true 
+
+belongs_to :thing, :polymorphic => true
 -----
+
+listing 8.1
+project.title 
+-> project.name
+
+-------
+page 256
+ch 8.2
+Let’s change the first two lines of this test in spec/controllers/projects_controller.rb from this
+Let’s change the first two lines of this test in spec/controllers/projects_controller_spec.rb from this
+
+-------
+page 260
+define_permission(user, "view", project)
+define_permission!(user, "view", project)
+-------
+page 262
+Add this line again underneath where you create the TextMate 2 project, this time in features/viewing_tickets.feature
+Add this line again underneath where you create the TextMate 2 project, this time in integration/viewing_tickets_spec.rb
+-------
+
