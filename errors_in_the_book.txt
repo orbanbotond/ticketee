@@ -166,3 +166,13 @@ The check_permission_box is defined on page 306
 def check_permission_box(permission, object)
    check "permissions_#{object.id}_#{permission}"
 end
+-------
+page 340
+listing 9.9.
+
+let(:ticket) { Factory(:ticket, :project => project,
+                                  :user => user) }
+                                  NameError:
+       undefined local variable or method `user' for #<RSpec::Core::ExampleGroup::Nested_1::Nested_2:0x007fe449bfd030>
+
+
