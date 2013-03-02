@@ -9,6 +9,14 @@
     <% end %>
   </title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
+  <style>
+    <% for state in @states %>
+      .state_<%= state.name.parameterize %> {
+        background: <%= state.background %>;
+        color: <%= state.color %>;
+      }
+    <% end %>
+  </style>
   <%= javascript_include_tag "application" %>
   <% if Rails.env == 'development' %>
     <%= javascript_include_tag asset_path('livereload.js?snipver=1') %>
