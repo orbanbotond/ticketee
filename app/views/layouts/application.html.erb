@@ -29,7 +29,11 @@
     Signed in as <%= current_user.email %>
     <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
     <% admins_only do %>
-      <% link_to "Admin", admin_root_path %>
+      <% if request.url =~ /admin/ %>
+        <% link_to "Home", root_path %>
+      <% else %>
+        <% link_to "Admin", admin_root_path %>
+      <% end %>
     <% end %>
   <% else %>
     <%= link_to "Sign up", new_user_registration_path %>

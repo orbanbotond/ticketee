@@ -1,13 +1,19 @@
-<%= form_for [@project, @ticket] do |f| %> <co id="ch05_157_1"/>
+<%= form_for [@project, @ticket],
+       :html => { :multipart => true } do |f| %>
   <%= f.error_messages %>
   <p>
     <%= f.label :title %><br>
         </programlisting>
       </informalexample>
     <%= f.text_field :title %>
-</p> <p>
+  </p> 
+  <p>
     <%= f.label :description %><br>
     <%= f.text_area :description %>
+  </p>
+  <p>
+    <%= f.label :asset, "File" %><br>
+    <%= f.file_field :asset %>
   </p>
   <%= f.submit %>
 <% end %>
