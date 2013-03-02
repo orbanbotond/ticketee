@@ -175,4 +175,15 @@ let(:ticket) { Factory(:ticket, :project => project,
                                   NameError:
        undefined local variable or method `user' for #<RSpec::Core::ExampleGroup::Nested_1::Nested_2:0x007fe449bfd030>
 
+So I created a user in another let block
+------------
+At the end of chapter 9
+In this scenario:
+  scenario "Creating a ticket with an attachment", :js => true do
 
+This works only.
+    attach_file "File #1", File.join( Rails.root, "spec/fixtures/speed.txt")
+
+This doesn't
+    attach_file "File #1", "spec/fixtures/speed.txt"
+-------------

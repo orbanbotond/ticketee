@@ -7,16 +7,10 @@ feature "Creating Tickets" do
     define_permission!(user, "view", project)
     define_permission!(user, "create tickets", project)
     sign_in_as!(user)
-
     visit '/'
     click_link "Internet Explorer"
     click_link "New Ticket"
 
-    message = "You need to sign in or sign up before continuing."
-    # page.should have_content(message)
-    # fill_in "Email", :with => "ticketee@example.com"
-    # fill_in "Password", :with => "password"
-    # click_button "Sign in"
     within("h2") { page.should have_content("New Ticket") }
   end
   scenario "Creating a ticket" do
@@ -41,18 +35,18 @@ feature "Creating Tickets" do
     page.should have_content("Ticket has not been created.")
     page.should have_content("Description is too short")
   end
-  scenario "Creating a ticket with an attachment" do
+
+  scenario "Creating a ticket with an attachment", :js => true do
     fill_in "Title", :with => "Add documentation for blink tag"
     fill_in "Description", :with => "The blink tag has a speed attribute"
-    attach_file "File #1", "spec/fixtures/speed.txt"
-    attach_file "File #2", "spec/fixtures/spin.txt"
-    attach_file "File #3", "spec/fixtures/gradient.txt"
+    attach_file "File #1", File.join( Rails.root, "spec/fixtures/speed.txt")
+    click_link "Add another file"
+    attach_file "File #2", File.join( Rails.root, "spec/fixtures/spin.txt")
     click_button "Create Ticket"
     page.should have_content("Ticket has been created.")
     within("#ticket .assets") do
       page.should have_content("speed.txt")
       page.should have_content("spin.txt")
-      page.should have_content("gradient.txt")
-    end 
+    end
   end
 end
